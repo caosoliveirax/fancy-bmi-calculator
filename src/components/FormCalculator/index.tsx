@@ -6,7 +6,6 @@ const FormCalculator = () => {
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault()
-    console.log('Altura:', height, 'Peso:', weight)
   }
 
   return (
@@ -35,6 +34,7 @@ const FormCalculator = () => {
           />
           <button type="submit">Calcular</button>
         </form>
+        <p></p>
       </div>
     </>
   )
