@@ -1,5 +1,5 @@
-import FormCalculator from '@components/FormCalculator'
 import { GlobalStyle } from './global'
+import FormCalculator from '@components/FormCalculator'
 
 function App() {
   return (

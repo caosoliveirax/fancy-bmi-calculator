@@ -1,11 +1,25 @@
 import { useState } from 'react'
+import { calculateBMI } from '@utils/calculateBMI'
+import { getBMICategory } from '@utils/getBMICategory'
+import ResultCard from '@components/ResultCard'
 
 const FormCalculator = () => {
   const [height, setHeight] = useState('')
   const [weight, setWeight] = useState('')
+  const [bmiResult, setBmiResult] = useState<number | null>(null)
+  const [bmiCategory, setBmiCategory] = useState<string | null>(null)
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault()
+
+    const h = parseFloat(height) / 100
+    const w = parseFloat(weight)
+
+    const bmi = calculateBMI(w, h)
+    setBmiResult(bmi)
+
+    const category = getBMICategory(bmi)
+    setBmiCategory(category)
   }
 
   return (
@@ -34,7 +48,7 @@ const FormCalculator = () => {
           />
           <button type="submit">Calcular</button>
         </form>
-        <p></p>
+        {bmiResult && bmiCategory && <ResultCard value={bmiResult} category={bmiCategory} />}
       </div>
     </>
   )
