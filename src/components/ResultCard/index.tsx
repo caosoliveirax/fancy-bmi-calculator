@@ -1,9 +1,11 @@
-type ResultCardProps = {
-  value: number
-  category: string
-}
+import { useAppSelector } from '../../store/hooks'
 
-const ResultCard = ({ value, category }: ResultCardProps) => {
+const ResultCard = () => {
+  const value = useAppSelector((state) => state.bmi.value)
+  const category = useAppSelector((state) => state.bmi.category)
+
+  if (value === null || category === null) return null
+
   const getMessage = (category: string) => {
     switch (category) {
       case 'Abaixo do peso':
