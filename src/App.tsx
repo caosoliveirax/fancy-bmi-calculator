@@ -3,6 +3,7 @@ import { store } from './store'
 import { GlobalStyle } from './global'
 import FormCalculator from '@components/FormCalculator'
 import ResultCard from '@components/ResultCard'
+import ClassificationTable from '@components/ClassificationTable'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <GlobalStyle />
       <FormCalculator />
       <ResultCard />
+      <ClassificationTable />
     </Provider>
   )
 }
