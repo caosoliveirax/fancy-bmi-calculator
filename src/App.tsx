@@ -5,16 +5,20 @@ import FormCalculator from '@components/FormCalculator'
 import ResultCard from '@components/ResultCard'
 import ClassificationTable from '@components/ClassificationTable'
 import { Container } from '@components/Container/styles'
+import { ThemeProvider } from 'styled-components'
+import { themes } from './themes/themes'
 
 function App() {
   return (
     <Provider store={store}>
-      <GlobalStyle />
-      <Container>
-        <FormCalculator />
-        <ResultCard />
-        <ClassificationTable />
-      </Container>
+      <ThemeProvider theme={themes.main}>
+        <GlobalStyle />
+        <Container>
+          <FormCalculator />
+          <ResultCard />
+          <ClassificationTable />
+        </Container>
+      </ThemeProvider>
     </Provider>
   )
 }

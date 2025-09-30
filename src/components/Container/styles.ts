@@ -11,19 +11,19 @@ export const Container = styled.main`
 
 export const CardContainer = styled.section`
   position: relative;
+  height: 800px;
+  width: 564px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  box-shadow: 0 8px 32px 0 rgba(0, 174, 255, 0.1);
-  border: 1px solid rgba(0, 204, 255, 0.49);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-  padding: 40px;
+  box-shadow: 0 8px 32px 0 ${({ theme }) => theme.shadow};
+  border: 1px solid ${({ theme }) => theme.card};
+  background-color: ${({ theme }) => theme.card};
   border-radius: 3rem;
-  gap: 8px;
+  padding: 40px;
   margin: 16px;
-  height: 800px;
-  width: 564px;
+  gap: 8px;
   z-index: 2;
 `
