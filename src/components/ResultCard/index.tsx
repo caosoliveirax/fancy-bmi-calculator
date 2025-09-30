@@ -1,3 +1,4 @@
+import { CardContainer } from '@components/Container/styles'
 import { useAppSelector } from '../../store/hooks'
 
 const ResultCard = () => {
@@ -26,12 +27,12 @@ const ResultCard = () => {
   }
 
   return (
-    <div>
+    <CardContainer>
       <p>Seu IMC é de:</p>
       <span>{value}</span> <br />
       <span>{category}</span>
       <p>{getMessage(category)}</p>
-    </div>
+    </CardContainer>
   )
 }
 

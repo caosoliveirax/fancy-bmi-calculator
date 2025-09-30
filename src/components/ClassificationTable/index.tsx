@@ -1,3 +1,4 @@
+import { CardContainer } from '@components/Container/styles'
 import { useAppSelector } from '../../store/hooks'
 
 const ClassificationTable = () => {
@@ -7,7 +8,7 @@ const ClassificationTable = () => {
   if (value === null || category === null) return null
 
   return (
-    <div>
+    <CardContainer>
       <h2>Classificações</h2>
       <table>
         <thead>
@@ -43,7 +44,7 @@ const ClassificationTable = () => {
           </tr>
         </tbody>
       </table>
-    </div>
+    </CardContainer>
   )
 }
 

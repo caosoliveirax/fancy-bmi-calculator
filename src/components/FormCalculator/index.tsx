@@ -3,6 +3,7 @@ import { calculateBMI } from '@utils/calculateBMI'
 import { getBMICategory } from '@utils/getBMICategory'
 import { useAppDispatch } from '../../store/hooks'
 import { setResult } from '../../store/bmiSlice'
+import { CardContainer } from '@components/Container/styles'
 
 const FormCalculator = () => {
   const [height, setHeight] = useState('')
@@ -23,7 +24,7 @@ const FormCalculator = () => {
   }
 
   return (
-    <div>
+    <CardContainer>
       <h1>Calculadora de IMC</h1>
       <p>Preencha os campos abaixo para calcular o seu Índice de Massa Corporal</p>
       <form onSubmit={handleSubmit}>
@@ -47,7 +48,7 @@ const FormCalculator = () => {
         />
         <button type="submit">Calcular</button>
       </form>
-    </div>
+    </CardContainer>
   )
 }
 
