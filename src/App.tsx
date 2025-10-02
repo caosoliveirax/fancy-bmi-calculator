@@ -1,22 +1,22 @@
 import { Provider } from 'react-redux'
 import { store } from './store'
 import { GlobalStyle } from './styles/global'
-import FormCalculator from '@components/FormCalculator'
-import ResultCard from '@components/ResultCard'
-import ClassificationTable from '@components/ClassificationTable'
-import { Container } from '@components/Container/styles'
 import { ThemeProvider } from 'styled-components'
 import { themes } from './themes/themes'
+import { Container } from '@components/Container/styles'
+import CalculatorCard from '@components/CalculatorCard'
+import ResultCard from '@components/ResultCard'
+import ClassificationCard from '@components/ClassificationCard'
 
 function App() {
   return (
     <Provider store={store}>
-      <ThemeProvider theme={themes.main}>
+      <ThemeProvider theme={themes.normal}>
         <GlobalStyle />
         <Container>
-          <FormCalculator />
+          <CalculatorCard />
           <ResultCard />
-          <ClassificationTable />
+          <ClassificationCard />
         </Container>
       </ThemeProvider>
     </Provider>

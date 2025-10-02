@@ -4,7 +4,7 @@ export const Container = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  background-color: ${({ theme }) => theme.background};
   height: 100vh;
   width: 100vw;
 `
@@ -18,11 +18,11 @@ export const CardContainer = styled.section`
   justify-content: center;
   align-items: center;
   text-align: center;
-  box-shadow: 0 8px 32px 0 ${({ theme }) => theme.shadow};
+  box-shadow: 0 16px 32px 0 ${({ theme }) => theme.shadow};
   border: 1px solid ${({ theme }) => theme.card};
   background-color: ${({ theme }) => theme.card};
   border-radius: 3rem;
-  padding: 40px;
+  padding: 100px 40px;
   margin: 16px;
   gap: 8px;
   z-index: 2;

@@ -1,5 +1,6 @@
 import { CardContainer } from '@components/Container/styles'
 import { useAppSelector } from '../../store/hooks'
+import { ResultCategory, ResultMessage, ResultTitle, ResultValue } from './styles'
 
 const ResultCard = () => {
   const value = useAppSelector((state) => state.bmi.value)
@@ -28,10 +29,10 @@ const ResultCard = () => {
 
   return (
     <CardContainer>
-      <p>Seu IMC é de:</p>
-      <span>{value}</span> <br />
-      <span>{category}</span>
-      <p>{getMessage(category)}</p>
+      <ResultTitle>Seu IMC é de:</ResultTitle>
+      <ResultValue>{value}</ResultValue>
+      <ResultCategory>{category}</ResultCategory>
+      <ResultMessage>{getMessage(category)}</ResultMessage>
     </CardContainer>
   )
 }

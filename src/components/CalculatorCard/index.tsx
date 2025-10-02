@@ -4,8 +4,16 @@ import { getBMICategory } from '@utils/getBMICategory'
 import { useAppDispatch } from '../../store/hooks'
 import { setResult } from '../../store/bmiSlice'
 import { CardContainer } from '@components/Container/styles'
+import {
+  MainDescription,
+  MainTitle,
+  FormCalculator,
+  FormLabel,
+  FormInput,
+  FormButton
+} from './styles'
 
-const FormCalculator = () => {
+const CalculatorCard = () => {
   const [height, setHeight] = useState('')
   const [weight, setWeight] = useState('')
 
@@ -25,11 +33,13 @@ const FormCalculator = () => {
 
   return (
     <CardContainer>
-      <h1>Calculadora de IMC</h1>
-      <p>Preencha os campos abaixo para calcular o seu Índice de Massa Corporal</p>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="height">Altura (cm)</label>
-        <input
+      <MainTitle>Calculadora de IMC</MainTitle>
+      <MainDescription>
+        Preencha os campos abaixo para calcular o seu Índice de Massa Corporal
+      </MainDescription>
+      <FormCalculator onSubmit={handleSubmit}>
+        <FormLabel htmlFor="height">Altura (cm)</FormLabel>
+        <FormInput
           value={height}
           onChange={(e) => setHeight(e.target.value)}
           id="height"
@@ -37,8 +47,8 @@ const FormCalculator = () => {
           placeholder="ex: 170"
           required
         />
-        <label htmlFor="weight">Peso (kg)</label>
-        <input
+        <FormLabel htmlFor="weight">Peso (kg)</FormLabel>
+        <FormInput
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
           id="weight"
@@ -46,10 +56,10 @@ const FormCalculator = () => {
           placeholder="ex: 60"
           required
         />
-        <button type="submit">Calcular</button>
-      </form>
+        <FormButton type="submit">Calcular</FormButton>
+      </FormCalculator>
     </CardContainer>
   )
 }
 
-export default FormCalculator
+export default CalculatorCard
