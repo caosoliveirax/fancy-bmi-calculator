@@ -4,9 +4,10 @@ export const Container = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.background};
   height: 100vh;
   width: 100vw;
+  background-color: ${({ theme }) => theme.background};
+  transition: background-color 2s ease;
 `
 
 export const CardContainer = styled.section`
@@ -26,4 +27,8 @@ export const CardContainer = styled.section`
   margin: 16px;
   gap: 8px;
   z-index: 2;
+  transition:
+    background-color 1s ease,
+    box-shadow 1s ease,
+    border-color 1s ease;
 `

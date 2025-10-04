@@ -1,13 +1,6 @@
 import { CardContainer } from '@components/Container/styles'
 import { useAppSelector } from '../../store/hooks'
-import {
-  FooterDescription,
-  Table,
-  TableCell,
-  TableCellCategory,
-  TableHeaderCell,
-  TableTitle
-} from './styles'
+import * as S from './styles'
 
 const ClassificationCard = () => {
   const value = useAppSelector((state) => state.bmi.value)
@@ -17,44 +10,44 @@ const ClassificationCard = () => {
 
   return (
     <CardContainer>
-      <TableTitle>Classificações</TableTitle>
-      <Table>
+      <S.TableTitle>Classificações</S.TableTitle>
+      <S.Table>
         <thead>
           <tr>
-            <TableHeaderCell>IMC</TableHeaderCell>
-            <TableHeaderCell>Categoria</TableHeaderCell>
+            <S.TableHeaderCell>IMC</S.TableHeaderCell>
+            <S.TableHeaderCell>Categoria</S.TableHeaderCell>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <TableCell>Abaixo de 18.5</TableCell>
-            <TableCellCategory category="underWeight">abaixo do peso</TableCellCategory>
+            <S.TableCell>Abaixo de 18.5</S.TableCell>
+            <S.TableCellCategory category="underWeight">abaixo do peso</S.TableCellCategory>
           </tr>
           <tr>
-            <TableCell>Entre 18.6 e 24.9</TableCell>
-            <TableCellCategory category="normal">peso ideal</TableCellCategory>
+            <S.TableCell>Entre 18.6 e 24.9</S.TableCell>
+            <S.TableCellCategory category="normal">peso ideal</S.TableCellCategory>
           </tr>
           <tr>
-            <TableCell>Entre 25 e 29.9</TableCell>
-            <TableCellCategory category="overWeight">sobrepeso</TableCellCategory>
+            <S.TableCell>Entre 25 e 29.9</S.TableCell>
+            <S.TableCellCategory category="overWeight">sobrepeso</S.TableCellCategory>
           </tr>
           <tr>
-            <TableCell>Entre 30 e 34.9</TableCell>
-            <TableCellCategory category="obesityI">obesidade grau I</TableCellCategory>
+            <S.TableCell>Entre 30 e 34.9</S.TableCell>
+            <S.TableCellCategory category="obesityI">obesidade grau I</S.TableCellCategory>
           </tr>
           <tr>
-            <TableCell>Entre 35 e 39.9</TableCell>
-            <TableCellCategory category="obesityII">obesidade grau II</TableCellCategory>
+            <S.TableCell>Entre 35 e 39.9</S.TableCell>
+            <S.TableCellCategory category="obesityII">obesidade grau II</S.TableCellCategory>
           </tr>
           <tr>
-            <TableCell>Acima de 40</TableCell>
-            <TableCellCategory category="obesityIII">obesidade grau III</TableCellCategory>
+            <S.TableCell>Acima de 40</S.TableCell>
+            <S.TableCellCategory category="obesityIII">obesidade grau III</S.TableCellCategory>
           </tr>
         </tbody>
-      </Table>
-      <FooterDescription>
+      </S.Table>
+      <S.FooterDescription>
         O IMC é apenas um indicador. Sempre consulte um profissional da saúde.
-      </FooterDescription>
+      </S.FooterDescription>
     </CardContainer>
   )
 }

@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import bmiReducer from './bmiSlice'
+import themeReducer from './reducers/themeSlice'
+import bmiReducer from './reducers/bmiSlice'
 
 export const store = configureStore({
   reducer: {
+    theme: themeReducer,
     bmi: bmiReducer
   }
 })

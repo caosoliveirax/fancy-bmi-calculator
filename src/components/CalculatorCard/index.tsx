@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { calculateBMI } from '@utils/calculateBMI'
 import { getBMICategory } from '@utils/getBMICategory'
 import { useAppDispatch } from '../../store/hooks'
-import { setResult } from '../../store/bmiSlice'
+import { setResult } from '../../store/reducers/bmiSlice'
 import { CardContainer } from '@components/Container/styles'
 import {
   MainDescription,
@@ -12,6 +12,8 @@ import {
   FormInput,
   FormButton
 } from './styles'
+import { getThemeNameByCategory } from '../../utils/getThemeNameByCategory'
+import { setTheme } from '../../store/reducers/themeSlice'
 
 const CalculatorCard = () => {
   const [height, setHeight] = useState('')
@@ -27,8 +29,10 @@ const CalculatorCard = () => {
 
     const bmi = calculateBMI(w, h)
     const category = getBMICategory(bmi)
+    const themeName = getThemeNameByCategory(category)
 
     dispatch(setResult({ value: bmi, category }))
+    dispatch(setTheme(themeName))
   }
 
   return (
