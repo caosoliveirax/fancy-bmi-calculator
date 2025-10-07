@@ -1,4 +1,3 @@
-import { CardContainer } from '@components/Container/styles'
 import { useAppSelector } from '../../store/hooks'
 import * as S from './styles'
 
@@ -9,7 +8,7 @@ const ClassificationCard = () => {
   if (value === null || category === null) return null
 
   return (
-    <CardContainer>
+    <S.AnimatedCardContainer>
       <S.TableTitle>Classificações</S.TableTitle>
       <S.Table>
         <thead>
@@ -21,34 +20,34 @@ const ClassificationCard = () => {
         <tbody>
           <tr>
             <S.TableCell>Abaixo de 18.5</S.TableCell>
-            <S.TableCellCategory category="underWeight">abaixo do peso</S.TableCellCategory>
+            <S.TableCellCategory $category="underWeight">abaixo do peso</S.TableCellCategory>
           </tr>
           <tr>
             <S.TableCell>Entre 18.6 e 24.9</S.TableCell>
-            <S.TableCellCategory category="normal">peso ideal</S.TableCellCategory>
+            <S.TableCellCategory $category="normal">peso ideal</S.TableCellCategory>
           </tr>
           <tr>
             <S.TableCell>Entre 25 e 29.9</S.TableCell>
-            <S.TableCellCategory category="overWeight">sobrepeso</S.TableCellCategory>
+            <S.TableCellCategory $category="overWeight">sobrepeso</S.TableCellCategory>
           </tr>
           <tr>
             <S.TableCell>Entre 30 e 34.9</S.TableCell>
-            <S.TableCellCategory category="obesityI">obesidade grau I</S.TableCellCategory>
+            <S.TableCellCategory $category="obesityI">obesidade grau I</S.TableCellCategory>
           </tr>
           <tr>
             <S.TableCell>Entre 35 e 39.9</S.TableCell>
-            <S.TableCellCategory category="obesityII">obesidade grau II</S.TableCellCategory>
+            <S.TableCellCategory $category="obesityII">obesidade grau II</S.TableCellCategory>
           </tr>
           <tr>
             <S.TableCell>Acima de 40</S.TableCell>
-            <S.TableCellCategory category="obesityIII">obesidade grau III</S.TableCellCategory>
+            <S.TableCellCategory $category="obesityIII">obesidade grau III</S.TableCellCategory>
           </tr>
         </tbody>
       </S.Table>
       <S.FooterDescription>
         O IMC é apenas um indicador. Sempre consulte um profissional da saúde.
       </S.FooterDescription>
-    </CardContainer>
+    </S.AnimatedCardContainer>
   )
 }
 

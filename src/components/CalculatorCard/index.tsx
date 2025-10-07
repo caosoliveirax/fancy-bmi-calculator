@@ -3,15 +3,7 @@ import { calculateBMI } from '@utils/calculateBMI'
 import { getBMICategory } from '@utils/getBMICategory'
 import { useAppDispatch } from '../../store/hooks'
 import { setResult } from '../../store/reducers/bmiSlice'
-import { CardContainer } from '@components/Container/styles'
-import {
-  MainDescription,
-  MainTitle,
-  FormCalculator,
-  FormLabel,
-  FormInput,
-  FormButton
-} from './styles'
+import * as S from './styles'
 import { getThemeNameByCategory } from '../../utils/getThemeNameByCategory'
 import { setTheme } from '../../store/reducers/themeSlice'
 
@@ -36,14 +28,14 @@ const CalculatorCard = () => {
   }
 
   return (
-    <CardContainer>
-      <MainTitle>Calculadora de IMC</MainTitle>
-      <MainDescription>
+    <S.AnimatedCardContainer>
+      <S.MainTitle>Calculadora de IMC</S.MainTitle>
+      <S.MainDescription>
         Preencha os campos abaixo para calcular o seu Índice de Massa Corporal
-      </MainDescription>
-      <FormCalculator onSubmit={handleSubmit}>
-        <FormLabel htmlFor="height">Altura (cm)</FormLabel>
-        <FormInput
+      </S.MainDescription>
+      <S.FormCalculator onSubmit={handleSubmit}>
+        <S.FormLabel htmlFor="height">Altura (cm)</S.FormLabel>
+        <S.FormInput
           value={height}
           onChange={(e) => setHeight(e.target.value)}
           id="height"
@@ -51,8 +43,8 @@ const CalculatorCard = () => {
           placeholder="ex: 170"
           required
         />
-        <FormLabel htmlFor="weight">Peso (kg)</FormLabel>
-        <FormInput
+        <S.FormLabel htmlFor="weight">Peso (kg)</S.FormLabel>
+        <S.FormInput
           value={weight}
           onChange={(e) => setWeight(e.target.value)}
           id="weight"
@@ -60,9 +52,9 @@ const CalculatorCard = () => {
           placeholder="ex: 60"
           required
         />
-        <FormButton type="submit">Calcular</FormButton>
-      </FormCalculator>
-    </CardContainer>
+        <S.FormButton type="submit">Calcular</S.FormButton>
+      </S.FormCalculator>
+    </S.AnimatedCardContainer>
   )
 }
 

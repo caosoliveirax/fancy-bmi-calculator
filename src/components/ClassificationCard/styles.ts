@@ -1,6 +1,7 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import type { BMICategory } from '../../themes/themes'
 import { themes } from '../../themes/themes'
+import { CardContainer } from '@components/Container/styles'
 
 const categoryColors: Record<BMICategory, string> = {
   underWeight: themes.underWeight.card,
@@ -10,6 +11,21 @@ const categoryColors: Record<BMICategory, string> = {
   obesityII: themes.obesityII.card,
   obesityIII: themes.obesityIII.card
 }
+
+const slideInFromTop = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-50px)
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`
+
+export const AnimatedCardContainer = styled(CardContainer)`
+  animation: ${slideInFromTop} 1.5s ease-out forwards;
+`
 
 export const Table = styled.table`
   margin-top: 20px;
@@ -35,9 +51,9 @@ export const TableCell = styled.td`
   text-align: center;
 `
 
-export const TableCellCategory = styled(TableCell)<{ category: BMICategory }>`
-  background-color: ${({ category }) => categoryColors[category]};
-  border-bottom: 1px solid ${({ category }) => categoryColors[category]};
+export const TableCellCategory = styled(TableCell)<{ $category: BMICategory }>`
+  background-color: ${({ $category }) => categoryColors[$category]};
+  border-bottom: 1px solid ${({ $category }) => categoryColors[$category]};
 `
 
 export const FooterDescription = styled.p`

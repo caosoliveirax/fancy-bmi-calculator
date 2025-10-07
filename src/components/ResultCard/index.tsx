@@ -1,6 +1,5 @@
-import { CardContainer } from '@components/Container/styles'
 import { useAppSelector } from '../../store/hooks'
-import { ResultCategory, ResultMessage, ResultTitle, ResultValue } from './styles'
+import * as S from './styles'
 
 const ResultCard = () => {
   const value = useAppSelector((state) => state.bmi.value)
@@ -28,12 +27,12 @@ const ResultCard = () => {
   }
 
   return (
-    <CardContainer>
-      <ResultTitle>Seu IMC é de:</ResultTitle>
-      <ResultValue>{value}</ResultValue>
-      <ResultCategory>{category}</ResultCategory>
-      <ResultMessage>{getMessage(category)}</ResultMessage>
-    </CardContainer>
+    <S.AnimatedCardContainer>
+      <S.ResultTitle>Seu IMC é de:</S.ResultTitle>
+      <S.ResultValue>{value}</S.ResultValue>
+      <S.ResultCategory>{category}</S.ResultCategory>
+      <S.ResultMessage>{getMessage(category)}</S.ResultMessage>
+    </S.AnimatedCardContainer>
   )
 }
 
