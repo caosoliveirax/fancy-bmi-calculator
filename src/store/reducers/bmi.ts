@@ -17,9 +17,13 @@ const bmiSlice = createSlice({
     setResult: (state, action: PayloadAction<{ value: number; category: string }>) => {
       state.value = action.payload.value
       state.category = action.payload.category
+    },
+    resetResult: (state) => {
+      state.value = initialState.value
+      state.category = initialState.category
     }
   }
 })
 
-export const { setResult } = bmiSlice.actions
+export const { setResult, resetResult } = bmiSlice.actions
 export default bmiSlice.reducer

@@ -16,7 +16,8 @@ export const themes: Record<string, DefaultTheme> = {
     hover: '#00ccffff',
     shadow: 'rgba(255, 255, 255, 0.2)',
     text: '#333',
-    focus: '#fff'
+    focus: '#fff',
+    error: '#ff2c2c'
   },
   underWeight: {
     background: '#9ED3D3',
@@ -25,7 +26,8 @@ export const themes: Record<string, DefaultTheme> = {
     hover: '#6ed1d1ff',
     shadow: 'rgba(255, 255, 255, 0.2)',
     text: '#fff',
-    focus: 'rgba(255, 255, 255, 0.2)'
+    focus: 'rgba(255, 255, 255, 0.2)',
+    error: '#d1001f'
   },
   normal: {
     background: '#7CC98D',
@@ -34,7 +36,8 @@ export const themes: Record<string, DefaultTheme> = {
     hover: '#029c23ff',
     shadow: 'rgba(0, 0, 0, 0.1)',
     text: '#fff',
-    focus: 'rgba(255, 255, 255, 0.2)'
+    focus: 'rgba(255, 255, 255, 0.2)',
+    error: '#d1001f'
   },
   overWeight: {
     background: '#FCE28C',
@@ -43,7 +46,8 @@ export const themes: Record<string, DefaultTheme> = {
     hover: '#ffeaa6ff',
     shadow: 'rgba(0, 0, 0, 0.1)',
     text: '#333',
-    focus: 'rgba(255, 255, 255, 0.2)'
+    focus: 'rgba(255, 255, 255, 0.2)',
+    error: '#fd5a46'
   },
   obesityI: {
     background: '#FFCE8A',
@@ -52,7 +56,8 @@ export const themes: Record<string, DefaultTheme> = {
     hover: '#ffc472ff',
     shadow: 'rgba(0, 0, 0, 0.1)',
     text: '#333',
-    focus: 'rgba(255, 255, 255, 0.2)'
+    focus: 'rgba(255, 255, 255, 0.2)',
+    error: '#fd5a46'
   },
   obesityII: {
     background: '#FDAAA0',
@@ -61,7 +66,8 @@ export const themes: Record<string, DefaultTheme> = {
     hover: '#3d0700ff',
     shadow: 'rgba(0, 0, 0, 0.2)',
     text: '#fff',
-    focus: 'rgba(255, 255, 255, 0.2)'
+    focus: 'rgba(255, 255, 255, 0.2)',
+    error: '#a0000dff'
   },
   obesityIII: {
     background: '#CEAAEB',
@@ -70,6 +76,7 @@ export const themes: Record<string, DefaultTheme> = {
     hover: '#53316eff',
     shadow: 'rgba(0, 0, 0, 0.2)',
     text: '#fff',
-    focus: 'rgba(255, 255, 255, 0.2)'
+    focus: 'rgba(255, 255, 255, 0.2)',
+    error: '#a0000dff'
   }
 }

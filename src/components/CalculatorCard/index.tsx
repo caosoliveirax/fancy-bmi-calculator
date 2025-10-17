@@ -2,59 +2,73 @@ import { useState } from 'react'
 import { calculateBMI } from '@utils/calculateBMI'
 import { getBMICategory } from '@utils/getBMICategory'
 import { useAppDispatch } from '../../store/hooks'
-import { setResult } from '../../store/reducers/bmiSlice'
-import * as S from './styles'
+import { setResult, resetResult } from '../../store/reducers/bmi'
 import { getThemeNameByCategory } from '../../utils/getThemeNameByCategory'
-import { setTheme } from '../../store/reducers/themeSlice'
+import { setTheme } from '../../store/reducers/theme'
+import CalculationForm from './CalculationForm'
+import ResetView from './ResetView'
 
 const CalculatorCard = () => {
+  const [isCalculated, setIsCalculated] = useState(false)
   const [height, setHeight] = useState('')
+  const [errorHeight, setErrorHeight] = useState<string | null>(null)
   const [weight, setWeight] = useState('')
+  const [errorWeight, setErrorWeight] = useState<string | null>(null)
 
   const dispatch = useAppDispatch()
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
+    setErrorWeight(null)
+    setErrorHeight(null)
 
-    const h = parseFloat(height) / 100
-    const w = parseFloat(weight)
+    let formIsValid = true
 
-    const bmi = calculateBMI(w, h)
+    const numericHeight = parseFloat(height)
+    const numericWeight = parseFloat(weight)
+
+    if (isNaN(numericHeight) || numericHeight <= 0) {
+      setErrorHeight('Altura inválida!')
+      formIsValid = false
+    }
+
+    if (isNaN(numericWeight) || numericWeight <= 0) {
+      setErrorWeight('Peso inválido!')
+      formIsValid = false
+    }
+
+    if (!formIsValid) {
+      return
+    }
+
+    const bmi = calculateBMI(numericWeight, numericHeight / 100)
     const category = getBMICategory(bmi)
     const themeName = getThemeNameByCategory(category)
 
     dispatch(setResult({ value: bmi, category }))
     dispatch(setTheme(themeName))
+    setIsCalculated(true)
   }
 
-  return (
-    <S.AnimatedCardContainer>
-      <S.MainTitle>Calculadora de IMC</S.MainTitle>
-      <S.MainDescription>
-        Preencha os campos abaixo para calcular o seu Índice de Massa Corporal
-      </S.MainDescription>
-      <S.FormCalculator onSubmit={handleSubmit}>
-        <S.FormLabel htmlFor="height">Altura (cm)</S.FormLabel>
-        <S.FormInput
-          value={height}
-          onChange={(e) => setHeight(e.target.value)}
-          id="height"
-          type="number"
-          placeholder="ex: 170"
-          required
-        />
-        <S.FormLabel htmlFor="weight">Peso (kg)</S.FormLabel>
-        <S.FormInput
-          value={weight}
-          onChange={(e) => setWeight(e.target.value)}
-          id="weight"
-          type="number"
-          placeholder="ex: 60"
-          required
-        />
-        <S.FormButton type="submit">Calcular</S.FormButton>
-      </S.FormCalculator>
-    </S.AnimatedCardContainer>
+  const handleReset = () => {
+    setIsCalculated(false)
+    setWeight('')
+    setHeight('')
+    dispatch(resetResult())
+  }
+
+  return isCalculated ? (
+    <ResetView onReset={handleReset} />
+  ) : (
+    <CalculationForm
+      onSubmit={handleSubmit}
+      height={height}
+      weight={weight}
+      errorHeight={errorHeight}
+      errorWeight={errorWeight}
+      setHeight={setHeight}
+      setWeight={setWeight}
+    />
   )
 }
 

@@ -9,5 +9,6 @@ declare module 'styled-components' {
     shadow: string
     focus: string
     text: string
+    error: string
   }
 }

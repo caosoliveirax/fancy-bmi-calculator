@@ -12,9 +12,11 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
     "@reduxjs/toolkit": "^2.9.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-imask": "^7.6.1",
     "react-redux": "^9.2.0",
     "styled-components": "^6.1.19"
   },
