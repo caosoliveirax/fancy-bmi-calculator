@@ -10,7 +10,7 @@ export type BMICategory =
 
 export const themes: Record<string, DefaultTheme> = {
   main: {
-    background: '#f1f1f1f1',
+    background: '#dbeef3ff',
     card: '#A8E6F5',
     button: '#54D9FA',
     hover: '#00ccffff',

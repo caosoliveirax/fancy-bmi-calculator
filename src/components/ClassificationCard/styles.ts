@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components'
 import type { BMICategory } from '../../themes/themes'
 import { themes } from '../../themes/themes'
-import { CardContainer } from '@components/Container/styles'
+import { Container as CardContainer } from '../Card/styles'
 
 const categoryColors: Record<BMICategory, string> = {
   underWeight: themes.underWeight.card,
@@ -23,23 +23,42 @@ const slideInFromTop = keyframes`
   }
 `
 
-export const AnimatedCardContainer = styled(CardContainer)`
+export const ClassificationContainer = styled(CardContainer)`
   animation: ${slideInFromTop} 1.5s ease-out forwards;
+  grid-area: classification;
+
+  @media (max-width: 768px) {
+    aspect-ratio: 4/5;
+  }
 `
 
 export const Table = styled.table`
   margin-top: 20px;
   width: 100%;
   border-collapse: collapse;
+
+  @media (max-width: 768px) {
+    margin-top: 10px;
+  }
 `
+
 export const TableTitle = styled.h2`
   font-size: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `
 
 export const TableHeaderCell = styled.th`
   background-color: ${({ theme }) => theme.shadow};
   font-size: 1.2rem;
   padding: 14px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 10px;
+  }
 `
 
 export const TableCell = styled.td`
@@ -49,6 +68,11 @@ export const TableCell = styled.td`
   font-weight: 500;
   padding: 14px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
 `
 
 export const TableCellCategory = styled(TableCell)<{ $category: BMICategory }>`
@@ -60,5 +84,10 @@ export const FooterDescription = styled.p`
   color: ${({ theme }) => theme.text};
   margin-top: 1rem;
   font-size: 0.9rem;
+  font-style: italic;
   padding: 0 40px;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `

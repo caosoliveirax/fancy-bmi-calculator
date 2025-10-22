@@ -1,34 +1,31 @@
 import { styled } from 'styled-components'
 
-export const Container = styled.main`
+export const Container = styled.main<{ $isResultVisible: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
+  padding: 40px;
   background-color: ${({ theme }) => theme.background};
   transition: background-color 2s ease;
-`
 
-export const CardContainer = styled.section`
-  position: relative;
-  height: 800px;
-  width: 564px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  box-shadow: 0 16px 32px 0 ${({ theme }) => theme.shadow};
-  border: 1px solid ${({ theme }) => theme.card};
-  background-color: ${({ theme }) => theme.card};
-  border-radius: 3rem;
-  padding: 100px 40px;
-  margin: 16px;
-  gap: 8px;
-  z-index: 2;
-  transition:
-    background-color 1s ease,
-    box-shadow 1s ease,
-    border-color 1s ease;
+  @media (max-width: 768px) {
+    ${({ $isResultVisible }) =>
+      $isResultVisible &&
+      `
+    display: grid;
+    align-content: center;
+    grid-template-areas:
+      'calculator'
+      'result'
+      'classification';
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    overflow-y: auto;
+    padding: 20px;
+    gap: 16px;
+    min-height: 100vh;
+    height: auto;
+  `}
+  }
 `

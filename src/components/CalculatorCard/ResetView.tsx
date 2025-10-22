@@ -1,6 +1,5 @@
 import { ArrowCounterClockwiseIcon } from '@phosphor-icons/react'
-import { ResetFormButton } from './styles'
-import { CardContainer } from '@components/Container/styles'
+import { ResetContainer, ResetFormButton } from './styles'
 
 type Props = {
   onReset: () => void
@@ -8,13 +7,11 @@ type Props = {
 
 const ResetView = ({ onReset }: Props) => {
   return (
-    <>
-      <CardContainer>
-        <ResetFormButton onClick={onReset} type="submit">
-          <ArrowCounterClockwiseIcon weight="bold" size={96} />
-        </ResetFormButton>
-      </CardContainer>
-    </>
+    <ResetContainer>
+      <ResetFormButton onClick={onReset} type="submit">
+        <ArrowCounterClockwiseIcon weight="bold" />
+      </ResetFormButton>
+    </ResetContainer>
   )
 }
 

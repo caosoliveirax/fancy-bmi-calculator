@@ -27,12 +27,12 @@ const ResultCard = () => {
   }
 
   return (
-    <S.AnimatedCardContainer>
+    <S.ResultContainer>
       <S.ResultTitle>Seu IMC é de:</S.ResultTitle>
       <S.ResultValue>{value}</S.ResultValue>
       <S.ResultCategory>{category}</S.ResultCategory>
       <S.ResultMessage>{getMessage(category)}</S.ResultMessage>
-    </S.AnimatedCardContainer>
+    </S.ResultContainer>
   )
 }
 

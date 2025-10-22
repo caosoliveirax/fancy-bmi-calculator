@@ -1,0 +1,32 @@
+import { styled } from 'styled-components'
+
+export const Container = styled.section`
+  position: relative;
+  aspect-ratio: 3/5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 16px 32px 0 ${({ theme }) => theme.shadow};
+  border: 1px solid ${({ theme }) => theme.card};
+  background-color: ${({ theme }) => theme.card};
+  border-radius: 3rem;
+  padding: 100px 40px;
+  margin: 16px;
+  z-index: 2;
+  transition:
+    background-color 1s ease,
+    box-shadow 1s ease,
+    border-color 1s ease;
+
+  @media (max-width: 768px) {
+    aspect-ratio: 1/1;
+    width: 100%;
+    justify-items: center;
+    padding: 20px;
+    border-radius: 1rem;
+    margin: 0px;
+  }
+`

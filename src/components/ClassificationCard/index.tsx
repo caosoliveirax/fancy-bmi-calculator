@@ -8,7 +8,7 @@ const ClassificationCard = () => {
   if (value === null || category === null) return null
 
   return (
-    <S.AnimatedCardContainer>
+    <S.ClassificationContainer>
       <S.TableTitle>Classificações</S.TableTitle>
       <S.Table>
         <thead>
@@ -47,7 +47,7 @@ const ClassificationCard = () => {
       <S.FooterDescription>
         O IMC é apenas um indicador. Sempre consulte um profissional da saúde.
       </S.FooterDescription>
-    </S.AnimatedCardContainer>
+    </S.ClassificationContainer>
   )
 }
 

@@ -10,11 +10,12 @@ import { useAppSelector } from './store/hooks'
 
 function AppContent() {
   const theme = useAppSelector((state) => state.theme.theme)
+  const isResultVisible = useAppSelector((state) => state.bmi.value !== null)
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Container>
+      <Container $isResultVisible={isResultVisible}>
         <CalculatorCard />
         <ResultCard />
         <ClassificationCard />

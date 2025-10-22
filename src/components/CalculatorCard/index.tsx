@@ -57,18 +57,22 @@ const CalculatorCard = () => {
     dispatch(resetResult())
   }
 
-  return isCalculated ? (
-    <ResetView onReset={handleReset} />
-  ) : (
-    <CalculationForm
-      onSubmit={handleSubmit}
-      height={height}
-      weight={weight}
-      errorHeight={errorHeight}
-      errorWeight={errorWeight}
-      setHeight={setHeight}
-      setWeight={setWeight}
-    />
+  return (
+    <>
+      {isCalculated ? (
+        <ResetView onReset={handleReset} />
+      ) : (
+        <CalculationForm
+          onSubmit={handleSubmit}
+          height={height}
+          weight={weight}
+          errorHeight={errorHeight}
+          errorWeight={errorWeight}
+          setHeight={setHeight}
+          setWeight={setWeight}
+        />
+      )}
+    </>
   )
 }
 

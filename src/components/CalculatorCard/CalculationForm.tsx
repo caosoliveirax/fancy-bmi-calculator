@@ -20,7 +20,7 @@ const CalculationForm = ({
   setWeight
 }: Props) => {
   return (
-    <S.AnimatedCardContainer>
+    <S.CalculatorContainer>
       <S.MainTitle>Calculadora de IMC</S.MainTitle>
       <S.MainDescription>
         Preencha os campos abaixo para calcular o seu Índice de Massa Corporal
@@ -57,7 +57,7 @@ const CalculationForm = ({
         </S.InputContainer>
         <S.FormButton type="submit">Calcular</S.FormButton>
       </S.FormCalculator>
-    </S.AnimatedCardContainer>
+    </S.CalculatorContainer>
   )
 }
 

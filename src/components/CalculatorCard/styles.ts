@@ -1,6 +1,6 @@
 import { styled, keyframes } from 'styled-components'
 import { IMaskInput } from 'react-imask'
-import { CardContainer } from '../Container/styles'
+import { Container as CardContainer } from '../Card/styles'
 
 export const showCard = keyframes`
   from {
@@ -37,19 +37,44 @@ export const pulse = keyframes`
   }
 `
 
-export const AnimatedCardContainer = styled(CardContainer)`
+export const CalculatorContainer = styled(CardContainer)`
+  aspect-ratio: 3/4;
   animation: ${showCard} 1s ease forwards;
+  grid-area: calculator;
+
+  @media (max-width: 768px) {
+    max-width: 519px;
+  }
+`
+export const ResetContainer = styled(CardContainer)`
+  grid-area: calculator;
+
+  @media (max-width: 768px) {
+    aspect-ratio: 3/1;
+    padding: 0;
+  }
 `
 
 export const MainTitle = styled.h1`
   font-size: 3.25rem;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin: 0 16px 16px;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+    margin: 16px;
+  }
 `
 
 export const MainDescription = styled.p`
   font-size: 1.5rem;
-  padding: 0 24px 24px;
+  width: 90%;
+  margin-bottom: 1.15rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    width: 75%;
+  }
 `
 
 export const FormCalculator = styled.form`
@@ -64,12 +89,21 @@ export const FormLabel = styled.label`
   font-size: 1.3rem;
   font-weight: 300;
   margin-bottom: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    font-weight: 500;
+  }
 `
 
 export const InputContainer = styled.div`
   width: 160px;
   position: relative;
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    width: 146px;
+  }
 `
 
 export const FormInput = styled(IMaskInput)`
@@ -107,6 +141,17 @@ export const FormInput = styled(IMaskInput)`
     -webkit-appearance: none;
     margin: 0;
   }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    font-weight: 400;
+    height: 56px;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
+  }
 `
 
 export const ErrorMessage = styled.p`
@@ -118,6 +163,11 @@ export const ErrorMessage = styled.p`
   left: 0;
   right: 0;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    bottom: -20px;
+  }
 `
 
 export const FormButton = styled.button`
@@ -149,6 +199,12 @@ export const FormButton = styled.button`
     background-color: ${({ theme }) => theme.button};
     transform: scale(0.95);
   }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    margin: 0 0 16px 0;
+    width: 104px;
+  }
 `
 
 export const ResetFormButton = styled.button`
@@ -177,6 +233,7 @@ export const ResetFormButton = styled.button`
 
   svg {
     animation: ${spin} 10s infinite ease-in-out;
+    font-size: 96px;
   }
 
   &:hover {
@@ -189,5 +246,14 @@ export const ResetFormButton = styled.button`
   &:active {
     background-color: ${({ theme }) => theme.button};
     transform: scale(0.95);
+  }
+
+  @media (max-width: 768px) {
+    width: 80px;
+    height: 80px;
+
+    svg {
+      font-size: 48px;
+    }
   }
 `
