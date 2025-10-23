@@ -28,7 +28,8 @@ export const ClassificationContainer = styled(CardContainer)`
   grid-area: classification;
 
   @media (max-width: 768px) {
-    aspect-ratio: 4/5;
+    aspect-ratio: 3/5;
+    max-height: 500px;
   }
 `
 
@@ -45,6 +46,10 @@ export const Table = styled.table`
 export const TableTitle = styled.h2`
   font-size: 2rem;
 
+  @media (max-width: 1024px) {
+    font-size: 1.5rem;
+  }
+
   @media (max-width: 768px) {
     font-size: 1.5rem;
   }
@@ -54,6 +59,11 @@ export const TableHeaderCell = styled.th`
   background-color: ${({ theme }) => theme.shadow};
   font-size: 1.2rem;
   padding: 14px;
+
+  @media (max-width: 1024px) {
+    font-size: 1rem;
+    padding: 8px;
+  }
 
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -68,6 +78,11 @@ export const TableCell = styled.td`
   font-weight: 500;
   padding: 14px;
   text-align: center;
+
+  @media (max-width: 1024px) {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
 
   @media (max-width: 768px) {
     font-size: 0.8rem;
@@ -86,6 +101,10 @@ export const FooterDescription = styled.p`
   font-size: 0.9rem;
   font-style: italic;
   padding: 0 40px;
+
+  @media (max-width: 1024px) {
+    font-size: 0.8rem;
+  }
 
   @media (max-width: 768px) {
     font-size: 0.8rem;

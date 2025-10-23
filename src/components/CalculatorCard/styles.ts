@@ -39,15 +39,22 @@ export const pulse = keyframes`
 
 export const CalculatorContainer = styled(CardContainer)`
   aspect-ratio: 3/4;
+  width: unset;
   animation: ${showCard} 1s ease forwards;
   grid-area: calculator;
 
-  @media (max-width: 768px) {
-    max-width: 519px;
+  @media (max-width: 1024px) {
+    aspect-ratio: 4/5;
+    width: 100%;
+    height: 100%;
   }
 `
 export const ResetContainer = styled(CardContainer)`
   grid-area: calculator;
+
+  @media (max-width: 1024px) {
+    height: 100%;
+  }
 
   @media (max-width: 768px) {
     aspect-ratio: 3/1;
@@ -56,9 +63,14 @@ export const ResetContainer = styled(CardContainer)`
 `
 
 export const MainTitle = styled.h1`
-  font-size: 3.25rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin: 0 16px 16px;
+  margin-bottom: 1.15rem;
+
+  @media (max-width: 1024px) {
+    font-size: 2.75rem;
+    margin-: 16px;
+  }
 
   @media (max-width: 768px) {
     font-size: 2.5rem;
@@ -67,9 +79,14 @@ export const MainTitle = styled.h1`
 `
 
 export const MainDescription = styled.p`
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   width: 90%;
   margin-bottom: 1.15rem;
+
+  @media (max-width: 1024px) {
+    font-size: 1.25rem;
+    width: 85%;
+  }
 
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -82,13 +99,17 @@ export const FormCalculator = styled.form`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 300px;
 `
 
 export const FormLabel = styled.label`
   font-size: 1.3rem;
   font-weight: 300;
   margin-bottom: 0.5rem;
+
+  @media (max-width: 1024px) {
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
 
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -142,10 +163,21 @@ export const FormInput = styled(IMaskInput)`
     margin: 0;
   }
 
+  @media (max-width: 1024px) {
+    font-size: 1.25rem;
+    font-weight: 40;
+    height: 56px;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 0.95rem;
+    }
+  }
+
   @media (max-width: 768px) {
     font-size: 1rem;
     font-weight: 400;
-    height: 56px;
+    height: 40px;
 
     &::placeholder {
       font-weight: 400;
@@ -163,6 +195,11 @@ export const ErrorMessage = styled.p`
   left: 0;
   right: 0;
   margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    font-size: 12px;
+    bottom: -20px;
+  }
 
   @media (max-width: 768px) {
     font-size: 12px;
@@ -200,10 +237,17 @@ export const FormButton = styled.button`
     transform: scale(0.95);
   }
 
+  @media (max-width: 1024px) {
+    font-size: 1rem;
+    width: 128px;
+    border-radius: 8px;
+  }
+
   @media (max-width: 768px) {
     font-size: 0.9rem;
     margin: 0 0 16px 0;
     width: 104px;
+    border-radius: 8px;
   }
 `
 

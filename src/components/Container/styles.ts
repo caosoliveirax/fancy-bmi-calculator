@@ -5,9 +5,29 @@ export const Container = styled.main<{ $isResultVisible: boolean }>`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 40px;
+  padding: 40px 40px;
+  gap: 16px;
+  overflow: hidden;
   background-color: ${({ theme }) => theme.background};
   transition: background-color 2s ease;
+
+  @media (max-width: 1024px) {
+    ${({ $isResultVisible }) =>
+      $isResultVisible &&
+      `
+    display: grid;
+    align-content: center;
+    grid-template-areas:
+      'result result'
+      'calculator classification';
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    padding: 40px;
+    gap: 16px;
+    height: auto;
+    min-height: 100vh;
+  `}
+  }
 
   @media (max-width: 768px) {
     ${({ $isResultVisible }) =>
@@ -24,8 +44,8 @@ export const Container = styled.main<{ $isResultVisible: boolean }>`
     overflow-y: auto;
     padding: 20px;
     gap: 16px;
-    min-height: 100vh;
     height: auto;
+    min-height: 100vh;
   `}
   }
 `
