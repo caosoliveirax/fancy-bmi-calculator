@@ -48,4 +48,13 @@ export const Container = styled.main<{ $isResultVisible: boolean }>`
     min-height: 100vh;
   `}
   }
+
+  @media (max-height: 480px) {
+    padding: 10px;
+    ${({ $isResultVisible }) =>
+      $isResultVisible &&
+      `
+    padding: 20px;
+  `}
+  }
 `

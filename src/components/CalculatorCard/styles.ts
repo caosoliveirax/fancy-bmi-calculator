@@ -48,6 +48,11 @@ export const CalculatorContainer = styled(CardContainer)`
     width: 100%;
     height: 100%;
   }
+
+  @media (max-height: 480px) {
+    flex-direction: row;
+    width: 100%;
+  }
 `
 export const ResetContainer = styled(CardContainer)`
   grid-area: calculator;
@@ -69,12 +74,14 @@ export const MainTitle = styled.h1`
 
   @media (max-width: 1024px) {
     font-size: 2.75rem;
-    margin-: 16px;
   }
 
   @media (max-width: 768px) {
     font-size: 2.5rem;
-    margin: 16px;
+  }
+
+  @media (max-height: 480px) {
+    display: none;
   }
 `
 
@@ -92,6 +99,14 @@ export const MainDescription = styled.p`
     font-size: 1rem;
     width: 75%;
   }
+
+  @media (max-height: 480px) {
+    width: 100%;
+  }
+
+  @media (max-height: 480px) {
+    display: none;
+  }
 `
 
 export const FormCalculator = styled.form`
@@ -99,31 +114,40 @@ export const FormCalculator = styled.form`
   flex-direction: column;
   align-items: center;
   width: 100%;
+
+  @media (max-height: 480px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+  }
 `
 
 export const FormLabel = styled.label`
-  font-size: 1.3rem;
-  font-weight: 300;
-  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
 
   @media (max-width: 1024px) {
     font-size: 1.1rem;
-    font-weight: 400;
   }
 
   @media (max-width: 768px) {
     font-size: 1rem;
-    font-weight: 500;
+  }
+
+  @media (max-height: 480px) {
+    font-size: 1rem;
   }
 `
 
 export const InputContainer = styled.div`
   width: 160px;
   position: relative;
+  margin-top: 0.5rem;
   margin-bottom: 2rem;
 
-  @media (max-width: 768px) {
-    width: 146px;
+  @media (max-height: 480px) {
+    margin-bottom: 1.25rem;
+    margin-top: 0;
   }
 `
 
@@ -135,6 +159,7 @@ export const FormInput = styled(IMaskInput)`
   text-align: center;
   height: 64px;
   width: 104px;
+  margin-top: 0.5rem;
   border: 1px solid ${({ theme }) => theme.card};
   border-radius: 8px;
   transition:
@@ -184,6 +209,12 @@ export const FormInput = styled(IMaskInput)`
       font-size: 0.9rem;
     }
   }
+
+  @media (max-height: 480px) {
+    font-size: 1.3rem;
+    height: 48px;
+    width: 160px;
+  }
 `
 
 export const ErrorMessage = styled.p`
@@ -215,12 +246,12 @@ export const FormButton = styled.button`
   height: 56px;
   width: 160px;
   padding: 0.5rem;
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   border: none;
-  border-radius: 16px;
+  border-radius: 8px;
   cursor: pointer;
   transition:
     background-color ease 0.3s,
@@ -240,14 +271,18 @@ export const FormButton = styled.button`
   @media (max-width: 1024px) {
     font-size: 1rem;
     width: 128px;
-    border-radius: 8px;
   }
 
   @media (max-width: 768px) {
     font-size: 0.9rem;
     margin: 0 0 16px 0;
     width: 104px;
-    border-radius: 8px;
+  }
+
+  @media (max-height: 480px) {
+    width: 160px;
+    height: 56px;
+    margin: 0;
   }
 `
 

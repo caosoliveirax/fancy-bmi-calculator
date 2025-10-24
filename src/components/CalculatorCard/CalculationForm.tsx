@@ -25,9 +25,9 @@ const CalculationForm = ({
       <S.MainDescription>
         Preencha os campos abaixo para calcular o seu Índice de Massa Corporal
       </S.MainDescription>
-      <S.FormCalculator onSubmit={onSubmit}>
-        <S.FormLabel htmlFor="height">Altura (cm)</S.FormLabel>
+      <S.FormCalculator id="form" onSubmit={onSubmit}>
         <S.InputContainer>
+          <S.FormLabel htmlFor="height">Altura (cm)</S.FormLabel>
           <S.FormInput
             value={height}
             onAccept={(value) => setHeight(String(value))}
@@ -40,8 +40,8 @@ const CalculationForm = ({
           />
           {errorHeight && <S.ErrorMessage>{errorHeight}</S.ErrorMessage>}
         </S.InputContainer>
-        <S.FormLabel htmlFor="weight">Peso (kg)</S.FormLabel>
         <S.InputContainer>
+          <S.FormLabel htmlFor="weight">Peso (kg)</S.FormLabel>
           <S.FormInput
             value={weight}
             onAccept={(value) => setWeight(String(value))}
@@ -55,8 +55,10 @@ const CalculationForm = ({
           />
           {errorWeight && <S.ErrorMessage>{errorWeight}</S.ErrorMessage>}
         </S.InputContainer>
-        <S.FormButton type="submit">Calcular</S.FormButton>
       </S.FormCalculator>
+      <S.FormButton form="form" type="submit">
+        Calcular
+      </S.FormButton>
     </S.CalculatorContainer>
   )
 }

@@ -38,4 +38,10 @@ export const Container = styled.section`
     border-radius: 1rem;
     margin: 0px;
   }
+
+  @media (max-width: 480px) {
+    padding: 20px;
+    border-radius: 1rem;
+    margin: 0px;
+  }
 `
