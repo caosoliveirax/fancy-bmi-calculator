@@ -154,8 +154,8 @@ export const InputContainer = styled.div`
 export const FormInput = styled(IMaskInput)`
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
-  font-size: 1.5rem;
-  font-weight: 300;
+  font-size: 1.25rem;
+  font-weight: 400;
   text-align: center;
   height: 64px;
   width: 104px;
@@ -168,7 +168,6 @@ export const FormInput = styled(IMaskInput)`
 
   &::placeholder {
     color: ${({ theme }) => theme.text};
-    opacity: 0.7;
     font-size: 1rem;
   }
 
@@ -177,6 +176,7 @@ export const FormInput = styled(IMaskInput)`
   }
 
   &:focus {
+    color: ${({ theme }) => theme.text};
     background-color: ${({ theme }) => theme.focus};
     box-shadow: 0 0 0 3px ${({ theme }) => theme.shadow};
     outline: none;
@@ -215,6 +215,11 @@ export const FormInput = styled(IMaskInput)`
     height: 48px;
     width: 160px;
   }
+`
+
+export const InputError = styled(FormInput)`
+  box-shadow: 0 0 0 3px ${({ theme }) => theme.error};
+  outline: none;
 `
 
 export const ErrorMessage = styled.p`
@@ -259,8 +264,7 @@ export const FormButton = styled.button`
 
   &:hover {
     background-color: ${({ theme }) => theme.hover};
-    transform: scale(1.02);
-    box-shadow: 0 0 16px 0px ${({ theme }) => theme.hover};
+    transform: scale(1.05);
   }
 
   &:active {
