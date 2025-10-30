@@ -18,7 +18,11 @@ const CalculatorCard = () => {
 
   useEffect(() => {
     if (isCalculated) {
-      resetButtonRef.current?.focus()
+      const timer = setTimeout(() => {
+        resetButtonRef.current?.focus()
+      }, 300)
+
+      return () => clearTimeout(timer)
     }
   }, [isCalculated])
 

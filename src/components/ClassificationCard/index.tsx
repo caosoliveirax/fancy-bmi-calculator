@@ -8,7 +8,7 @@ const ClassificationCard = () => {
   if (value === null || category === null) return null
 
   return (
-    <S.ClassificationContainer>
+    <S.ClassificationContainer aria-live="polite" aria-atomic="true">
       <S.TableTitle>Classificações</S.TableTitle>
       <S.Table>
         <thead>

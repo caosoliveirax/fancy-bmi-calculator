@@ -27,7 +27,7 @@ const ResultCard = () => {
   }
 
   return (
-    <S.ResultContainer>
+    <S.ResultContainer aria-live="polite" aria-atomic="true">
       <S.ResultTitle>Seu IMC é de:</S.ResultTitle>
       <S.ResultValue>{value}</S.ResultValue>
       <S.ResultCategory>{category}</S.ResultCategory>

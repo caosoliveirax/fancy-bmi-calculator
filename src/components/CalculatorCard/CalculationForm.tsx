@@ -38,7 +38,7 @@ const CalculationForm = ({
             maxLength={3}
             scale={0}
           />
-          {errorHeight && <S.ErrorMessage>{errorHeight}</S.ErrorMessage>}
+          {errorHeight && <S.ErrorMessage role="alert">{errorHeight}</S.ErrorMessage>}
         </S.InputContainer>
         <S.InputContainer>
           <S.FormLabel htmlFor="weight">Peso (kg)</S.FormLabel>
@@ -53,7 +53,7 @@ const CalculationForm = ({
             scale={1}
             radix="."
           />
-          {errorWeight && <S.ErrorMessage>{errorWeight}</S.ErrorMessage>}
+          {errorWeight && <S.ErrorMessage role="alert">{errorWeight}</S.ErrorMessage>}
         </S.InputContainer>
       </S.FormCalculator>
       <S.FormButton form="form" type="submit">
