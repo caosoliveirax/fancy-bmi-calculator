@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { calculateBMI } from '@utils/calculateBMI'
 import { getBMICategory } from '@utils/getBMICategory'
 import { useAppDispatch } from '../../store/hooks'
@@ -14,6 +14,13 @@ const CalculatorCard = () => {
   const [errorHeight, setErrorHeight] = useState<string | null>(null)
   const [weight, setWeight] = useState('')
   const [errorWeight, setErrorWeight] = useState<string | null>(null)
+  const resetButtonRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    if (isCalculated) {
+      resetButtonRef.current?.focus()
+    }
+  }, [isCalculated])
 
   const dispatch = useAppDispatch()
 
@@ -60,7 +67,7 @@ const CalculatorCard = () => {
   return (
     <>
       {isCalculated ? (
-        <ResetView onReset={handleReset} />
+        <ResetView ref={resetButtonRef} onReset={handleReset} />
       ) : (
         <CalculationForm
           onSubmit={handleSubmit}

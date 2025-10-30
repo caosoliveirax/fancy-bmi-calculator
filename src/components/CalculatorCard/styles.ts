@@ -296,7 +296,7 @@ export const FormButton = styled.button`
 export const ResetFormButton = styled.button`
   background-color: ${({ theme }) => theme.card};
   color: ${({ theme }) => theme.text};
-  box-shadow: 0 0 8px 0px ${({ theme }) => theme.background};
+  box-shadow: 0 0 8px 0px ${({ theme }) => theme.shadow};
   border: none;
   border-radius: 50%;
   width: 200px;
@@ -323,14 +323,14 @@ export const ResetFormButton = styled.button`
   }
 
   &:focus-visible {
-    outline: 5px solid ${({ theme }) => theme.text};
+    outline: 3px solid ${({ theme }) => theme.text};
   }
 
   &:hover {
     background-color: ${({ theme }) => theme.card};
     color: ${({ theme }) => theme.text};
     transform: scale(1.01);
-    box-shadow: 0 0 24px 8px ${({ theme }) => theme.background};
+    box-shadow: 0 0 24px 8px ${({ theme }) => theme.shadow};
   }
 
   &:active {
