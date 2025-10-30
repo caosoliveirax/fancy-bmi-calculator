@@ -168,18 +168,18 @@ export const FormInput = styled(IMaskInput)`
 
   &::placeholder {
     color: ${({ theme }) => theme.text};
-    font-size: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
   }
 
   &:focus::placeholder {
     color: transparent;
   }
 
-  &:focus {
+  &:focus-visible {
     color: ${({ theme }) => theme.text};
     background-color: ${({ theme }) => theme.focus};
-    box-shadow: 0 0 0 3px ${({ theme }) => theme.shadow};
-    outline: none;
+    outline: 3px solid ${({ theme }) => theme.button};
   }
 
   &::-webkit-outer-spin-button,
@@ -219,7 +219,6 @@ export const FormInput = styled(IMaskInput)`
 
 export const InputError = styled(FormInput)`
   box-shadow: 0 0 0 3px ${({ theme }) => theme.error};
-  outline: none;
 `
 
 export const ErrorMessage = styled.p`
@@ -261,6 +260,10 @@ export const FormButton = styled.button`
   transition:
     background-color ease 0.3s,
     transform ease 0.3s;
+
+  &:focus-visible {
+    outline: 3px solid ${({ theme }) => theme.text};
+  }
 
   &:hover {
     background-color: ${({ theme }) => theme.hover};
@@ -317,6 +320,10 @@ export const ResetFormButton = styled.button`
   svg {
     animation: ${spin} 10s infinite ease-in-out;
     font-size: 96px;
+  }
+
+  &:focus-visible {
+    outline: 5px solid ${({ theme }) => theme.text};
   }
 
   &:hover {
