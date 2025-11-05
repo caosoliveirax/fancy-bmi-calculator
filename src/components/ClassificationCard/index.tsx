@@ -8,7 +8,7 @@ const ClassificationCard = () => {
   if (value === null || category === null) return null
 
   return (
-    <S.ClassificationContainer aria-live="polite" aria-atomic="true">
+    <S.ClassificationContainer>
       <S.TableTitle>Classificações</S.TableTitle>
       <S.Table>
         <thead>
@@ -32,15 +32,15 @@ const ClassificationCard = () => {
           </tr>
           <tr>
             <S.TableCell>Entre 30 e 34.9</S.TableCell>
-            <S.TableCellCategory $category="obesityI">obesidade grau I</S.TableCellCategory>
+            <S.TableCellCategory $category="obesityI">obesidade grau 1</S.TableCellCategory>
           </tr>
           <tr>
             <S.TableCell>Entre 35 e 39.9</S.TableCell>
-            <S.TableCellCategory $category="obesityII">obesidade grau II</S.TableCellCategory>
+            <S.TableCellCategory $category="obesityII">obesidade grau 2</S.TableCellCategory>
           </tr>
           <tr>
             <S.TableCell>Acima de 40</S.TableCell>
-            <S.TableCellCategory $category="obesityIII">obesidade grau III</S.TableCellCategory>
+            <S.TableCellCategory $category="obesityIII">obesidade grau 3</S.TableCellCategory>
           </tr>
         </tbody>
       </S.Table>

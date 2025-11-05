@@ -2,11 +2,12 @@ import { Provider } from 'react-redux'
 import { store } from './store'
 import { GlobalStyle } from './styles/global'
 import { ThemeProvider } from 'styled-components'
+import { useAppSelector } from './store/hooks'
 import { Container } from '@components/Container/styles'
 import CalculatorCard from '@components/CalculatorCard'
 import ResultCard from '@components/ResultCard'
 import ClassificationCard from '@components/ClassificationCard'
-import { useAppSelector } from './store/hooks'
+import LiveRegion from '@components/LiveRegion'
 
 function AppContent() {
   const theme = useAppSelector((state) => state.theme.theme)
@@ -15,6 +16,7 @@ function AppContent() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <LiveRegion />
       <Container $isResultVisible={isResultVisible}>
         <CalculatorCard />
         <ResultCard />
