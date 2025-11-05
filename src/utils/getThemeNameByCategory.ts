@@ -8,11 +8,11 @@ export function getThemeNameByCategory(category: string): BMICategory {
       return 'normal'
     case 'Sobrepeso':
       return 'overWeight'
-    case 'Obesidade grau I':
+    case 'Obesidade grau 1':
       return 'obesityI'
-    case 'Obesidade grau II':
+    case 'Obesidade grau 2':
       return 'obesityII'
-    case 'Obesidade grau III':
+    case 'Obesidade grau 3':
       return 'obesityIII'
     default:
       return 'normal'

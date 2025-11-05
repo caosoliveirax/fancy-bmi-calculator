@@ -17,7 +17,7 @@ export const ResultContainer = styled(CardContainer)`
   grid-area: result;
 `
 
-export const ResultTitle = styled.h2`
+export const ResultTitle = styled.p`
   font-size: 2rem;
   font-weight: 600;
 

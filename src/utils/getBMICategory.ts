@@ -6,10 +6,10 @@ export function getBMICategory(bmi: number): string {
   } else if (bmi <= 29.9) {
     return 'Sobrepeso'
   } else if (bmi <= 34.9) {
-    return 'Obesidade grau I'
+    return 'Obesidade grau 1'
   } else if (bmi <= 39.9) {
-    return 'Obesidade grau II'
+    return 'Obesidade grau 2'
   } else {
-    return 'Obesidade grau III'
+    return 'Obesidade grau 3'
   }
 }
