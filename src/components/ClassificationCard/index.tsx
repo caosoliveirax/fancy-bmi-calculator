@@ -9,12 +9,12 @@ const ClassificationCard = () => {
 
   return (
     <S.ClassificationContainer>
-      <S.TableTitle>Classificações</S.TableTitle>
-      <S.Table>
+      <S.TableTitle id="classification-table-title">Classificações</S.TableTitle>
+      <S.Table aria-labelledby="classification-table-title">
         <thead>
           <tr>
-            <S.TableHeaderCell>IMC</S.TableHeaderCell>
-            <S.TableHeaderCell>Categoria</S.TableHeaderCell>
+            <S.TableHeaderCell scope="col">IMC</S.TableHeaderCell>
+            <S.TableHeaderCell scope="col">Categoria</S.TableHeaderCell>
           </tr>
         </thead>
         <tbody>
