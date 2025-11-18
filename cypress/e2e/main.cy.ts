@@ -26,4 +26,23 @@ describe('Deve simular fluxos de usuário', () => {
 
     cy.get('main').should('have.css', 'background-color', 'rgb(80, 154, 88)')
   })
+
+  it('Simulando o fluxo de validação', () => {
+    cy.contains('button', 'Calcular').click()
+
+    cy.get('p[role="alert"]').should('have.length', 2)
+    cy.contains('Altura inválida!').should('be.visible')
+    cy.contains('Peso inválido!').should('be.visible')
+
+    cy.contains('Seu IMC é de:').should('not.exist')
+
+    cy.get('#height').type('0')
+    cy.get('#weight').type('90')
+
+    cy.contains('button', 'Calcular').click()
+
+    cy.get('p[role="alert"]').should('have.length', 1)
+    cy.contains('Altura inválida!').should('be.visible')
+    cy.contains('Peso inválido!').should('not.exist')
+  })
 })
