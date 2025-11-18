@@ -15,7 +15,7 @@ export const themes: Record<string, DefaultTheme> = {
     card: '#A8E6F5',
     button: '#54D9FA',
     hover: '#00ccffff',
-    shadow: 'rgba(255, 255, 255, 0.3)',
+    shadow: 'rgba(0, 0, 0, 0.2)',
     focus: '#fff',
     error: '#B11B1B'
   },
@@ -25,7 +25,7 @@ export const themes: Record<string, DefaultTheme> = {
     card: '#5BA9ED',
     button: '#89C1F2',
     hover: '#6aa1d6',
-    shadow: 'rgba(0, 0, 0, 0.3)',
+    shadow: 'rgba(0, 0, 0, 0.2)',
     focus: '#cde1f1ff',
     error: '#6A0C0C'
   },
@@ -45,7 +45,7 @@ export const themes: Record<string, DefaultTheme> = {
     card: '#F9D455',
     button: '#FCE28C',
     hover: '#ffeaa6ff',
-    shadow: 'rgba(0, 0, 0, 0.1)',
+    shadow: 'rgba(0, 0, 0, 0.2)',
     focus: '#FFEFB1',
     error: '#9E3122'
   },
