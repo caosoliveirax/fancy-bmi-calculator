@@ -4,7 +4,7 @@ import { keyframes, styled } from 'styled-components'
 const slideInFromLeft = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-40px);
+    transform: translateX(-10px);
   }
   to {
     opacity: 1;

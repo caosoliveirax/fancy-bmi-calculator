@@ -5,7 +5,7 @@ export const Container = styled.main<{ $isResultVisible: boolean }>`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 40px 40px;
+  padding: 80px 40px;
   gap: 16px;
   overflow: hidden;
   background-color: ${({ theme }) => theme.background};

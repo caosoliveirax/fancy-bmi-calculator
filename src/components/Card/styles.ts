@@ -12,7 +12,7 @@ export const Container = styled.section`
   box-shadow: 0 16px 32px 0 ${({ theme }) => theme.shadow};
   border: 1px solid ${({ theme }) => theme.card};
   background-color: ${({ theme }) => theme.card};
-  border-radius: 3rem;
+  border-radius: 2rem;
   padding: 100px 40px;
 
   z-index: 2;

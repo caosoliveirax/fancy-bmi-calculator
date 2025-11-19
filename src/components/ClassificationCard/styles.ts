@@ -15,7 +15,7 @@ const categoryColors: Record<BMICategory, string> = {
 const slideInFromTop = keyframes`
   from {
     opacity: 0;
-    transform: translateY(-50px)
+    transform: translateY(-40px)
   }
   to {
     opacity: 1;

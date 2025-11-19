@@ -15,7 +15,7 @@ export const themes: Record<string, DefaultTheme> = {
     card: '#A8E6F5',
     button: '#54D9FA',
     hover: '#00ccffff',
-    shadow: 'rgba(0, 0, 0, 0.2)',
+    shadow: 'rgba(0, 0, 0, 0.1)',
     focus: '#fff',
     error: '#B11B1B'
   },
