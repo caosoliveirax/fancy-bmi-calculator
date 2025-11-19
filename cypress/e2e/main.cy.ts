@@ -81,4 +81,30 @@ describe('Deve simular fluxos de usuário', () => {
 
     cy.get('main').should('have.css', 'background-color', 'rgb(183, 217, 247)')
   })
+
+  describe('Simular os fluxos do layout responsivo', () => {
+    it('Deve exibir layout em coluna no Mobile (390px)', () => {
+      cy.viewport(390, 844)
+
+      cy.get('#height').type('160')
+      cy.get('#weight').type('80')
+      cy.contains('button', 'Calcular').click()
+
+      cy.get('main')
+        .should('have.css', 'display', 'grid')
+        .and('have.css', 'grid-template-areas', '"calculator" "result" "classification"')
+    })
+
+    it('Deve exibir layout em coluna no Tablet (820px)', () => {
+      cy.viewport(820, 1180)
+
+      cy.get('#height').type('170')
+      cy.get('#weight').type('80')
+      cy.contains('button', 'Calcular').click()
+
+      cy.get('main')
+        .should('have.css', 'display', 'grid')
+        .and('have.css', 'grid-template-areas', '"result result" "calculator classification"')
+    })
+  })
 })
