@@ -1,84 +1,107 @@
-# Calculadora de IMC Dinâmica
+# ⚖️ Fancy BMI Calculator
 
-Uma aplicação web moderna para calcular o Índice de Massa Corporal (IMC). A interface é simples, intuitiva e reage dinamicamente ao resultado, alterando seu tema e cores para fornecer um feedback visual imediato sobre a classificação de saúde do usuário.
+Uma calculadora de IMC que não apenas calcula, mas reage.
 
----
+Esta aplicação web moderna calcula o Índice de Massa Corporal (IMC) e
+adapta toda a sua interface visualmente para refletir o resultado.
 
-## Objetivo
+## 📸 Preview
+![preview](https://github.com/user-attachments/assets/84f84176-bd0d-4a40-91ee-67ce0c301cc5)
 
-Este projeto foi construído como uma forma de praticar e demonstrar habilidades no ecossistema React, aplicando conceitos de componentização, gerenciamento de estado global, estilização dinâmica e boas práticas de desenvolvimento com TypeScript. O foco foi criar uma experiência de usuário fluida e agradável, indo além de uma simples calculadora.
+## 🚀 Funcionalidades
 
----
+🎨 **Temas Reativos:** A aplicação possui um motor de
+temas integrado ao Redux. Ao calcular o IMC, o tema global (cores de
+fundo, botões, cards) muda instantaneamente para representar a categoria
+de saúde (ex: Azul para "Abaixo do peso", Verde para "Normal", Vermelho
+para "Obesidade").
 
-## Principais Funcionalidades
+🔢 **Input Masking:** Entradas de dados controladas e formatadas para
+garantir a precisão do cálculo.
 
-* **Cálculo de IMC em Tempo Real:** Insira seu peso e altura para obter o resultado instantaneamente.
-* **Classificação Automática:** O resultado é classificado em categorias como "Abaixo do peso", "Normal", "Sobrepeso", etc., com base nos padrões da Organização Mundial da Saúde (OMS).
-* **Temas Dinâmicos:** A interface da aplicação muda de cor de acordo com a categoria do resultado do IMC, criando uma experiência visual única e informativa.
-* **Feedback Personalizado:** Para cada classificação, uma mensagem customizada é exibida, oferecendo um contexto sobre o resultado.
-* **Animações e Transições:** Componentes aparecem com animações suaves, tornando a navegação mais fluida e moderna.
+♿ **Acessibilidade (a11y):** Uso de regiões aria-live para leitores de
+tela, garantindo que o resultado seja anunciado para todos os usuários.
 
----
+📱 **Totalmente Responsivo:** Layout fluido que se adapta de celulares a
+desktops, com animações suaves de entrada.
 
-## Tecnologias Utilizadas
+🧪 **Cobertura de Testes:** Suíte robusta incluindo testes unitários
+(Vitest) e testes ponta a ponta (Cypress).
 
-* **Frontend:**
-    * **React:** Biblioteca para construção da interface.
-    * **TypeScript:** Garante um código mais seguro e manutenível.
-    * **Vite:** Build tool de alta performance para desenvolvimento.
+## 🛠️ Tecnologias & Ferramentas
 
-* **Gerenciamento de Estado:**
-    * **Redux Toolkit:** Para um gerenciamento de estado global previsível e organizado (IMC, tema atual).
+### **Core**
 
-* **Estilização:**
-    * **Styled-components:** Para criar componentes estilizados e um sistema de temas dinâmico.
+-   **React 19 & Vite:** Performance e DX (Developer Experience) de
+    ponta.
+-   **TypeScript:** Tipagem estática rigorosa para segurança do código.
 
-* **Qualidade de Código:**
-    * **ESLint e Prettier:** Para garantir a padronização e a qualidade do código.
+### **Estado & Estilo**
 
----
+-   **Redux Toolkit:** Gerenciamento de estado global para controlar os
+    resultados do IMC e a injeção dinâmica de temas.
+-   **Styled-components:** CSS-in-JS para componentização e aplicação
+    dos temas.
 
-## Como Executar o Projeto
+### **Qualidade de Código (QA)**
 
-1.  **Clone o repositório:**
-    ```bash
+-   **Vitest & Testing Library:** Testes unitários e de integração.
+-   **Cypress:** Testes End-to-End (E2E) simulando fluxos reais do
+    usuário.
+-   **GitHub Actions:** Pipeline de CI configurado para rodar linting e
+    testes a cada push.
+
+## 🏗️ Estrutura do Projeto
+
+A arquitetura foca na separação de responsabilidades:
+
+    src/
+    ├── components/      # Componentes isolados (CalculatorCard, ResultCard, etc.)
+    ├── store/           # Configuração do Redux (Slices de BMI e Theme)
+    ├── themes/          # Definição dos tokens de design para cada categoria de IMC
+    ├── utils/           # Funções puras de cálculo e lógica de negócios
+    ├── styles/          # Estilos globais
+    └── ...
+
+## 💻 Como Executar
+
+**Pré-requisitos:** Node.js (v20+) e pnpm.
+
+### Clone o repositório:
+
     git clone https://github.com/caosoliveirax/fancy-bmi-calculator.git
-    ```
-
-2.  **Acesse o diretório do projeto:**
-    ```bash
     cd fancy-bmi-calculator
-    ```
 
-3.  **Instale as dependências:**
-    ```bash
+### Instale as dependências:
+
     pnpm install
-    ```
 
-4.  **Inicie o servidor de desenvolvimento:**
-    ```bash
-    pnpm run dev
-    ```
+### Inicie o servidor de desenvolvimento:
 
-    Após executar o último comando, a aplicação estará disponível em `http://localhost:5173`.
+    pnpm dev
 
----
+Acesse **http://localhost:5173** no seu navegador.
 
-## Scripts Disponíveis
+## 🧪 Testes
 
-* `pnpm dev`: Inicia o servidor de desenvolvimento.
-* `pnpm build`: Compila o projeto para produção.
-* `pnpm lint`: Executa o linter para encontrar problemas no código.
-* `pnpm format`: Formata o código automaticamente com o Prettier.
+### Testes Unitários (Vitest)
 
----
+Para rodar os testes de componentes e funções utilitárias:
 
-## Futuras Melhorias
+    pnpm test
+    # ou para ver a cobertura
+    pnpm test:coverage
 
-* **Layout Responsivo:** Adaptar a interface para uma visualização otimizada em dispositivos móveis.
+### Testes E2E (Cypress)
 
----
+Para abrir a interface do Cypress e ver os testes rodando no navegador:
 
-## Créditos
+    npx cypress open
 
-* As classificações de IMC utilizadas como referência são baseadas nas diretrizes da [Organização Mundial da Saúde (OMS)](https://www.who.int/health-topics/obesity#tab=tab_1).
+> Certifique-se de que a aplicação está rodando (`pnpm dev`) antes de
+> iniciar o Cypress, ou utilize o script de CI.
+
+## 📝 Licença
+
+Este projeto está sob a licença **MIT**. Veja o arquivo LICENSE para
+mais detalhes.
