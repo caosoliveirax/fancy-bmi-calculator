@@ -27,7 +27,7 @@ describe('Deve simular fluxos de usuário', () => {
     cy.get('main').should('have.css', 'background-color', 'rgb(80, 154, 88)')
   })
 
-  it('Simulando o fluxo de validação', () => {
+  it('Simulando o fluxo de validação (erros)', () => {
     cy.contains('button', 'Calcular').click()
 
     cy.get('p[role="alert"]').should('have.length', 2)
@@ -44,5 +44,25 @@ describe('Deve simular fluxos de usuário', () => {
     cy.get('p[role="alert"]').should('have.length', 1)
     cy.contains('Altura inválida!').should('be.visible')
     cy.contains('Peso inválido!').should('not.exist')
+  })
+
+  it('Simular o fluxo de reset', () => {
+    cy.get('#height').type('160')
+    cy.get('#weight').type('100')
+    cy.contains('button', 'Calcular').click()
+
+    cy.contains('Obesidade grau 2').should('be.visible')
+
+    cy.get('button[aria-label="Retornar a calculadora"]').click()
+
+    cy.get('#height').should('have.value', '')
+    cy.get('#weight').should('have.value', '')
+
+    cy.contains('button', 'Calcular').should('be.visible')
+
+    cy.contains('Seu IMC é de:').should('not.exist')
+    cy.contains('Classificações').should('not.exist')
+
+    cy.get('main').should('have.css', 'background-color', 'rgb(255, 113, 104)')
   })
 })
