@@ -65,4 +65,20 @@ describe('Deve simular fluxos de usuário', () => {
 
     cy.get('main').should('have.css', 'background-color', 'rgb(255, 113, 104)')
   })
+
+  it('Simular o fluxo de múltiplos temas', () => {
+    cy.get('#height').type('160')
+    cy.get('#weight').type('120')
+    cy.contains('button', 'Calcular').click()
+
+    cy.get('main').should('have.css', 'background-color', 'rgb(99, 87, 125)')
+
+    cy.get('button[aria-label="Retornar a calculadora"]').click()
+
+    cy.get('#height').type('180')
+    cy.get('#weight').type('50')
+    cy.contains('button', 'Calcular').click()
+
+    cy.get('main').should('have.css', 'background-color', 'rgb(183, 217, 247)')
+  })
 })
