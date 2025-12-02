@@ -37,6 +37,7 @@ export const Table = styled.table`
   margin-top: 20px;
   width: 100%;
   border-collapse: collapse;
+  border: 1px solid ${({ theme }) => theme.text};
 
   @media (max-width: 768px) {
     margin-top: 10px;
@@ -73,7 +74,7 @@ export const TableHeaderCell = styled.th`
 
 export const TableCell = styled.td`
   background-color: ${({ theme }) => theme.shadow};
-  border-bottom: 1px solid ${({ theme }) => theme.card};
+  border: 1px solid ${({ theme }) => theme.text};
   font-size: 1rem;
   font-weight: 500;
   padding: 14px;
@@ -93,6 +94,7 @@ export const TableCell = styled.td`
 export const TableCellCategory = styled(TableCell)<{ $category: BMICategory }>`
   background-color: ${({ $category }) => categoryColors[$category]};
   border-bottom: 1px solid ${({ $category }) => categoryColors[$category]};
+  border: 1px solid ${({ theme }) => theme.text};
 `
 
 export const FooterDescription = styled.p`

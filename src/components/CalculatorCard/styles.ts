@@ -30,7 +30,6 @@ export const spin = keyframes`
 export const pulse = keyframes`
   0%, 10%, 100% {
     transform: scale(1);
-    /* O box-shadow foi removido daqui temporariamente */
   }
   5% {
     transform: scale(1.05);
@@ -160,7 +159,7 @@ export const FormInput = styled(IMaskInput)`
   height: 64px;
   width: 104px;
   margin-top: 0.5rem;
-  border: 1px solid ${({ theme }) => theme.card};
+  border: 1px solid ${({ theme }) => theme.text};
   border-radius: 8px;
   transition:
     background-color 0.3s ease,
@@ -246,6 +245,7 @@ export const FormButton = styled.button`
   background-color: ${({ theme }) => theme.button};
   box-shadow: 0 0px 8px 4px ${({ theme }) => theme.shadow};
   color: ${({ theme }) => theme.text};
+  border: 1px solid ${({ theme }) => theme.text};
   margin-top: 16px;
   height: 56px;
   width: 160px;
@@ -254,7 +254,6 @@ export const FormButton = styled.button`
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  border: none;
   border-radius: 8px;
   cursor: pointer;
   transition:
@@ -296,20 +295,13 @@ export const FormButton = styled.button`
 export const ResetFormButton = styled.button`
   background-color: ${({ theme }) => theme.card};
   color: ${({ theme }) => theme.text};
+  border: 1px solid ${({ theme }) => theme.text};
   box-shadow: 0 0 8px 0px ${({ theme }) => theme.shadow};
-  border: none;
   border-radius: 50%;
   width: 200px;
   height: 200px;
   cursor: pointer;
   animation: ${pulse} 10s infinite ease-in-out;
-
-  /* TODO: A animação de box-shadow no 'pulse' não funciona em conjunto com a de 'transform'.
-    O navegador parece ter um bug de otimização que ignora a animação da sombra.
-    A solução ideal é criar duas animações separadas e sincronizadas, uma para 'transform'
-    e outra para 'box-shadow', e aplicá-las ao mesmo tempo.
-    Isso foi deixado para uma futura refatoração para não bloquear outras tarefas.
-  */
 
   transition:
     background-color ease 0.3s,

@@ -8,6 +8,7 @@ import CalculatorCard from '@components/CalculatorCard'
 import ResultCard from '@components/ResultCard'
 import ClassificationCard from '@components/ClassificationCard'
 import LiveRegion from '@components/LiveRegion'
+import Footer from '@components/Footer'
 
 function AppContent() {
   const theme = useAppSelector((state) => state.theme.theme)
@@ -21,6 +22,7 @@ function AppContent() {
         <CalculatorCard />
         <ResultCard />
         <ClassificationCard />
+        <Footer />
       </Container>
     </ThemeProvider>
   )

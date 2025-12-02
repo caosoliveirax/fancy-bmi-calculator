@@ -1,14 +1,15 @@
 import { styled } from 'styled-components'
 
-export const Container = styled.main<{ $isResultVisible: boolean }>`
+export const Container = styled.div<{ $isResultVisible: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding: 80px 40px;
+  padding: 120px 40px;
   gap: 16px;
   overflow: hidden;
   background-color: ${({ theme }) => theme.background};
+  position: relative;
   transition: background-color 2s ease;
 
   @media (max-width: 1024px) {
