@@ -22,7 +22,7 @@ function AppContent() {
         <CalculatorCard />
         <ResultCard />
         <ClassificationCard />
-        <Footer />
+        <Footer isHiddenOnResult={isResultVisible} />
       </Container>
     </ThemeProvider>
   )

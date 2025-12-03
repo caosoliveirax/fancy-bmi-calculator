@@ -1,5 +1,8 @@
 # ⚖️ Fancy BMI Calculator
 
+![CI Pipeline](https://github.com/caosoliveirax/fancy-bmi-calculator/actions/workflows/cy.yml/badge.svg)
+[![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=fancy-bmi-calculator)](https://fancy-bmi-calculator-carlos.vercel.app)
+
 Uma calculadora de IMC que não apenas calcula, mas reage.
 
 Esta aplicação web moderna calcula o Índice de Massa Corporal (IMC) e

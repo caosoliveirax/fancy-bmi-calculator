@@ -82,6 +82,27 @@ describe('Deve simular fluxos de usuário', () => {
     cy.get('main').should('have.css', 'background-color', 'rgb(183, 217, 247)')
   })
 
+  it('Simulando o fluxo para a visibilidade do rodapé e integridade dos links', () => {
+    cy.get('footer[role="contentinfo"]').should('be.visible')
+
+    cy.get('a[aria-label="Voltar para o portfólio"]').should('have.attr', 'href', '#')
+    cy.get('a[aria-label="Visitar repositório no Github"]')
+      .should('have.attr', 'href', 'https://github.com/caosoliveirax/fancy-bmi-calculator')
+      .and('have.attr', 'target', '_blank')
+    cy.get('a[aria-label="Visitar perfil no LinkedIn"]')
+      .should('have.attr', 'href', 'https://www.linkedin.com/in/carlos-oliveira-044552148/')
+      .and('have.attr', 'target', '_blank')
+
+    cy.get('#height').type('170')
+    cy.get('#weight').type('90')
+    cy.contains('button', 'Calcular').click()
+
+    cy.get('footer[role="contentinfo"]').should('not.be.visible')
+
+    cy.get('button[aria-label="Retornar a calculadora"]').click()
+    cy.get('footer[role="contentinfo"]').should('be.visible')
+  })
+
   describe('Simular os fluxos do layout responsivo', () => {
     it('Deve exibir layout em coluna no Mobile (390px)', () => {
       cy.viewport(390, 844)
