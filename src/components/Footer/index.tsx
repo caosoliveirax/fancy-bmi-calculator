@@ -1,19 +1,14 @@
-import { useAppSelector } from 'store/hooks'
 import { Copyright, FooterContainer, LinksWrapper, SocialLink } from './styles'
 
-const Footer = () => {
-  const isResultVisible = useAppSelector((state) => state.bmi.value !== null)
+type Props = {
+  isHiddenOnResult: boolean
+}
 
+const Footer = ({ isHiddenOnResult }: Props) => {
   return (
-    <FooterContainer $isResultVisible={isResultVisible}>
+    <FooterContainer role="contentinfo" $isResultVisible={isHiddenOnResult}>
       <LinksWrapper>
-        <SocialLink
-          className="link-portfolio"
-          aria-label="Voltar para o portfólio"
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <SocialLink className="link-portfolio" aria-label="Voltar para o portfólio" href="#">
           <p>Voltar para o portfólio</p>
           <svg
             aria-hidden="true"

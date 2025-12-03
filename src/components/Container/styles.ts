@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 
-export const Container = styled.div<{ $isResultVisible: boolean }>`
+export const Container = styled.main<{ $isResultVisible: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
