@@ -9,7 +9,7 @@ Esta aplicação web moderna calcula o Índice de Massa Corporal (IMC) e
 adapta toda a sua interface visualmente para refletir o resultado.
 
 ## 📸 Preview
-![preview](https://github.com/user-attachments/assets/84f84176-bd0d-4a40-91ee-67ce0c301cc5)
+![preview](https://github.com/user-attachments/assets/2a9a6bbe-54c9-46c9-948d-52a2b23ee7b2)
 
 ## 🚀 Funcionalidades
 
