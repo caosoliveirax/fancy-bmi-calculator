@@ -12,6 +12,18 @@ export const Container = styled.main<{ $isResultVisible: boolean }>`
   position: relative;
   transition: background-color 2s ease;
 
+  @media (max-width: 768px) {
+    padding: 100px 40px 120px 40px;
+  }
+
+  @media (max-height: 768px) {
+    padding: 40px 40px 120px 40px;
+  }
+
+  @media (max-width: 480px) and (max-height: 600px) {
+    padding: 40px 40px 120px 40px;
+  }
+
   @media (max-width: 1024px) {
     ${({ $isResultVisible }) =>
       $isResultVisible &&

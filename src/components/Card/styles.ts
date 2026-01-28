@@ -25,8 +25,8 @@ export const Container = styled.section`
     width: 100%;
     aspect-ratio: unset;
     justify-items: center;
-    padding: 20px 40px;
     border-radius: 1rem;
+    padding: 20px;
     margin: 0px;
   }
 
@@ -34,7 +34,6 @@ export const Container = styled.section`
     width: 100%;
     height: 100%;
     justify-items: center;
-    padding: 20px;
     border-radius: 1rem;
     margin: 0px;
   }
