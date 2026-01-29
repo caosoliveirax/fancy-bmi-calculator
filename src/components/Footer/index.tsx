@@ -8,7 +8,11 @@ const Footer = ({ isHiddenOnResult }: Props) => {
   return (
     <FooterContainer role="contentinfo" $isResultVisible={isHiddenOnResult}>
       <LinksWrapper>
-        <SocialLink className="link-portfolio" aria-label="Voltar para o portfólio" href="#">
+        <SocialLink
+          className="link-portfolio"
+          aria-label="Voltar para o portfólio"
+          href="https://carlos-oliveira.vercel.app/"
+        >
           <p>Voltar para o portfólio</p>
           <svg
             aria-hidden="true"

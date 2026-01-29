@@ -85,7 +85,11 @@ describe('Deve simular fluxos de usuário', () => {
   it('Simulando o fluxo para a visibilidade do rodapé e integridade dos links', () => {
     cy.get('footer[role="contentinfo"]').should('be.visible')
 
-    cy.get('a[aria-label="Voltar para o portfólio"]').should('have.attr', 'href', '#')
+    cy.get('a[aria-label="Voltar para o portfólio"]').should(
+      'have.attr',
+      'href',
+      'https://carlos-oliveira.vercel.app/'
+    )
     cy.get('a[aria-label="Visitar repositório no Github"]')
       .should('have.attr', 'href', 'https://github.com/caosoliveirax/fancy-bmi-calculator')
       .and('have.attr', 'target', '_blank')

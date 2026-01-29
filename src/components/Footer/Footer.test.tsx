@@ -38,7 +38,7 @@ describe('Deve testar o componente Footer', () => {
     const portfolioLinkPlaceholder = screen.getByLabelText('Voltar para o portfólio')
     expect(portfolioLinkPlaceholder).not.toHaveAttribute('target', '_blank')
     expect(portfolioLinkPlaceholder).not.toHaveAttribute('rel', 'noopener noreferrer')
-    expect(portfolioLinkPlaceholder).toHaveAttribute('href', '#')
+    expect(portfolioLinkPlaceholder).toHaveAttribute('href', 'https://carlos-oliveira.vercel.app/')
   })
 
   it('Deve verificar se aplica display:none quando isHiddenOnResult for true', () => {
